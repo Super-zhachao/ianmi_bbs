@@ -1,5 +1,5 @@
 <?php if ($list->isEmpty()) { ?>
-    <div class="bbs_empty replay_empty">暂无评论！</div>
+    <?php useComp('/components/common/nofind', ['desc' => "暂无评论！"]); ?>
 <?php } else { ?>
 <div class="list bbs_list">
     <?php foreach ($list as $item) { ?>

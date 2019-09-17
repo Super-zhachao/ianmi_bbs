@@ -2,7 +2,7 @@
 <?php useComp("/components/common/header_menu_nav?title=首页" ); ?>
 <?php
 	$version = source('/comm/core/IamVersion/getVersion');
-	$setting = \comm\Setting::get(['theme', 'login_reward', 'weblogo', 'webname', 'webname_after', 'keywords', 'description']);
+	$setting = \comm\Setting::get(['theme']);
 	$theme = $setting['theme'] ?? 'default';
 ?>
 <?php

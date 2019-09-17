@@ -2,22 +2,38 @@
 <?php useComp('/components/common/header_nav', [
     'title' => $class_info['title']
 ]); ?>
-<div class="bbas_action">
-    <div class="create_time">发帖 <?=$list->total()?> 篇</div>
-    <div class="create_time reply">有<?=$reply_count?>人评论</div>
-    <!-- <a class="btn" href="/forum/add_page?class_id=<?=$class_info['id']?>" style="display:inline-block;">发帖</a> -->
+<?php $sta_data = source('Model/IanmiBBS/getIndexStastic'); ?>
+<div class="sys_right_fixed">
+  <ul>
+    <li class="fare"><a href="/forum/add_page"><div class="ico"></div></a></li>
+    <li class="retop"><div class="ico" id="retop"></div></li>
+  </ul>
+</div>
+<div class="_index_nav">
+  <div class="_active">
+    <a href="#">最近</a>
+  </div>
+  <div>
+    <a href="#">最新</a>
+  </div>
+  <div>
+    <a href="#">话题</a>
+  </div>
+  <div>
+    <a href="#">图片</a>
+  </div>
+  <div>
+    <a href="#">文件</a>
+  </div>
 </div>
 
-<div class="bbs_order border-b">
-    <div class="bbs_order_title">最近回复</div>
-    <div>·</div>
-</div>
 <?php if ($list->total() == 0) { ?>
-    <div class="bbs_empty">这个地方空空如也！</div>
+    <?php useComp('/components/common/nofind', ['desc' => "这个地方空空如也"]); ?>
 <?php } else { ?>
     <div class="list bbs_list">
 <?php foreach($list as $item) { ?>
-    <?php useComp('/components/forum/list_img_text', ['item' => $item]); ?>
+<!--    --><?php //useComp('/components/forum/list_img_text', ['item' => $item]); ?>
+    <?php useComp('/components/forum/list_care', ['item' => $item]); ?>
 <?php } ?>
 </div>
 
@@ -25,4 +41,4 @@
 <?=$list->render()?>
 </div>
 <?php } ?>
-<?php self::load('common/footer'); ?>
+<?php useComp('/components/common/footer'); ?>

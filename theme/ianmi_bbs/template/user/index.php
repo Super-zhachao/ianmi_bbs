@@ -1,10 +1,17 @@
 <?php useComp('components/common/user_header',['title' => '用户中心']); ?>
+<?php
+	$setting = \comm\Setting::get(['theme']);
+	$theme = $setting['theme'] ?? 'default';
+?>
 <link rel="stylesheet" type="text/css" href="/static/css/cropper.min.css">
 
 <script src="/static/js/cropper.min.js"></script>
 <script src="/static/js/reszieimg.js"></script>
 
 <style>
+body{
+background: #fff;
+}
 .select-photo-page {
     display: none;
     position: fixed;
@@ -22,32 +29,28 @@
     right: 0;
 }
 </style>
+<div class='zoon-head'>
 <?php useComp('/components/common/header_nav', ['back_url' => '/', 'title' => '个人中心']); ?>
+<div>
+  <div class="g-userTop">
+			<img src="<?=$user['photo']?>" alt="" class="tx photo">
+			<div class="con">
+				<a href="#" class="s-btn edit-info"><i class="icon_set"></i></a>
+				<p class="nike"><?=$user['nickname']?></p>
+				<p class="renz"><i></i> vip <?=$user['vip_level']?></p>
+			</div>
+	</div>
 
-<?php useComp('/components/common/left_menu'); ?>
-
-    <div class="user-info border-b">
-      <img class="user-photo photo" src="<?=$user['photo']?>" alt="">
-      <div class="info-box">
-        <div class="user-nc">
-            <span><?=$user['nickname']?> <span class="vip_icon vip_0">vip <?=$user['vip_level']?></span><span class="user_lv">lv.<?=$user['level']?></span><span class="user_coin">金币: <?=$user['coin']?></span></span>
-            
-        </div>
-        <div class="user-ep"><?=$user['explain']?></div>
-        <div class="edit-info"><i class="icon-svg s_edit"></i>点击修改个人信息</div>
-      </div>
-    </div>
-    
-<a class="fans_nav flex-box" href="/user/friend_care">
-    <div class="fans_nav_link">
-        <div class="fans_nav_num"><?=$care_count?></div>
-        <div>关注</div>
-    </div>
-    <div class="fans_nav_link border-l">
-        <div class="fans_nav_num"><?=$fans_count?></div>
-        <div>粉丝</div>
-    </div>
-</a>
+<div class="g-box1 iswxsmall_hide">
+			<div class="g-userInfo">
+				<ul>
+					<li><b class="price"><a href="/user/friend_care"><?=$care_count?></a></b>关注</li>
+					<li><b class="price"><a href="/user/friend_care"><?=$fans_count?></a></b>粉丝</li>
+					<li><a href="/user/edit_page"><img src="/theme/<?=$theme?>/template/static/img/xginfo.png" alt="" class="icon">修改资料</a></li>
+					<li><a href="/user/update_password_page"><img src="/theme/<?=$theme?>/template/static/img/xgpwd.png" alt="" class="icon">修改密码</a></li>
+				</ul>
+			</div>
+		</div>
 
 <div class="change-info">
 
@@ -99,25 +102,8 @@
         </a>
     </div> -->
 
-    <div class="li-box border-b">
-        <a href="/user/edit_page" class="flex-box flex">
-            <i class="li-box-svg icon-svg b_mofang"></i>
-            <div class="li-box-word">修改资料</div>
-        </a>
-    </div>
-    <div class="li-box border-b">
-        <a href="/user/update_password_page" class="flex-box flex">
-            <i class="li-box-svg icon-svg b_puke"></i>
-            <div class="li-box-word">修改密码</div>
-        </a>
-    </div>
-    <div class="li-box border-b">
-        <a href="/user/quit" class="flex-box flex">
-            <i class="li-box-svg icon-svg b_shuiqiang"></i>
-            <div class="li-box-word">退出</div>
-        </a>
-    </div>
 </div>
+ <a href="/user/quit" class="g-btn3 iswxsmall_hide">安全退出<i class="gt"></i></a>
 <div class="select-photo-page">
     <div class="header-bar">
         <div class="header-item back-info">

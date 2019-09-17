@@ -4,7 +4,7 @@
 <?php $list = source('Model/Forum/getList', ['user_id' => $user['id']]); ?>
 
 <?php if ($list->isEmpty()) { ?>
-    <div class="bbs_empty">这个地方空空如也！</div>
+    <?php useComp('/components/common/nofind', ['desc' => "赶紧去发帖哟！"]); ?>
 <?php } else { ?>
     <div class="list bbs_list">
 <?php foreach($list as $item) { ?>

@@ -11,10 +11,10 @@
   </div>
   <a class="text" href="/forum/view?id=<?= $item['id'] ?>">
     <div class="title">
-        <?php if ($item['is_top'] == 1) { ?><span class='forum_top'>顶</span><?php } ?>
-        <?php if ($item['is_cream'] == 1) { ?><span class='forum_cream'>精</span><?php } ?>
+        <?php if ($item['is_top'] == 1) { ?><span class='icon-text'><em class="ding">顶</em></span><?php } ?>
+        <?php if ($item['is_cream'] == 1) { ?><span class='icon-text re'><em class="re">精</em></span><?php } ?>
       <!-- <?php if ($item['img_data'] != '') { ?><span class='forum_img'>图</span><?php } ?> -->
-        <?php if ($item['file_data'] != '') { ?><span class='forum_file'>附</span><?php } ?>
+        <?php if ($item['file_data'] != '') { ?><span class='icon-text'><em>附</em></span><?php } ?>
         <?= $item['title'] ?></div>
     <div class="context"><?= $item['mini_context'] ?></div>
       <?php if (!empty($item['img_list'])) { ?>

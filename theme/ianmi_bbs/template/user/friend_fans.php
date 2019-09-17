@@ -8,9 +8,9 @@
     </div>
     <div class="tab-content">
             <div class="tab-page tab1 tab-active">
-                <?php if (empty($fans_list)) { ?>
-                    <div class="bbs_empty">这个地方空空如也！</div>
-                <?php } else { ?>
+                <?php if ($fans_list->toArray()['total']== 0) {
+                    useComp('/components/common/nofind', ['desc' => "哦！看来是人格魅力还差点哟！"]);
+                } else { ?>
                 <div class="list">
                 <?php foreach ($fans_list as $item) { ?>
                     <?php if ($userinfo = source('Model/User/getAuthor', ['id' => $item['user_id']])) { ?>

@@ -1,14 +1,17 @@
 <script type="text/javascript">
-  $(function () {
-    //  图片懒加载
-    lazyLoadInit({
-      coverColor: "white",
-      //    coverDiv: "<span class='lazyload'>加载中...</span>",
-      offsetBottom: 0,
-      offsetTopm: 0,
-      showTime: 1100
+    <?php
+    $setting = \comm\Setting::get(['theme']);
+    $theme = $setting['theme'] ?? 'default'; ?>
+    $(function () {
+      //  图片懒加载
+      lazyLoadInit({
+//        coverColor: "#FFF1CE",
+//        coverDiv: "<img class='loading-gif' src='/theme/<?//= $theme ?>///template/static/img/load.gif' alt='加载中...'/>",
+        offsetBottom: 200,
+        offsetTopm: 200
+//        showTime: 500
+      });
     });
-  });
 </script>
 </body>
 </html>

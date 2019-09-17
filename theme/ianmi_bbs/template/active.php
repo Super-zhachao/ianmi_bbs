@@ -8,7 +8,7 @@
 ?>
 <div class="list img_list">
 <?php if ($list->isEmpty()) { ?>
-    <div class="empty_word">还没有关注其他人哦！</div>
+    <?php useComp('/components/common/nofind', ['desc' => "还没有关注其他人哦"]); ?>
 <?php } ?>
 <?php foreach($list as $item) { ?>
 <?php useComp('/components/forum/list_img_text', ['item' => $item]); ?>
