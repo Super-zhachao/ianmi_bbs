@@ -67,7 +67,7 @@
                   src="<?= $forum->author['photo'] ?>" alt=""></a></div>
             <div class="rr">
               <h3><a href="<?= href('/user/show?id=' . $forum->author['id']) ?>"> <?= $forum->author['nickname'] ?><span
-                    class="display0"><i></i>VIP<?= $forum->author['vip_level'] ?></span><em>楼主</em></a></h3>
+                    class="bbs-vip"><i></i>VIP<?= $forum->author['vip_level'] ?></span><em>楼主</em></a></h3>
               <p><font class="date2"><?= $fans_count ?>粉丝</font></p>
             </div>
           </div>

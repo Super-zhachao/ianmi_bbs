@@ -4,8 +4,13 @@
 body {
     max-width: 28rem;
     width: 100%;
-    margin: 0;
+    margin: 0 auto;
     padding: 0;
+}
+
+.footer-bar {
+    max-width: 28rem;
+    margin: 0 auto;
 }
 
 cite, dfn, em, var {
@@ -666,6 +671,7 @@ a {
     height: 9px;
     vertical-align: middle;
 }
+
 .house_nomore {
     border-top: 1px solid #eaeaea;
     padding: 15px 0;
@@ -674,6 +680,7 @@ a {
     color: #aaa;
     text-align: center;
 }
+
 .house_nomore .nofind img {
     display: block;
     width: 180px;
@@ -682,11 +689,12 @@ a {
     vertical-align: middle;
     border: 0;
 }
+
 .header-bar {
     position: sticky;
     top: 0;
     z-index: 99;
-    box-shadow: 0 0 8px rgba(0,0,0,.15);
+    box-shadow: 0 0 8px rgba(0, 0, 0, .15);
 }
 
 .sys_right_fixed {
@@ -695,31 +703,37 @@ a {
     bottom: 90px;
     z-index: 99;
 }
+
 .sys_right_fixed li {
     width: 50px;
     height: 50px;
 }
+
 .sys_right_fixed .fare .ico {
     background-position: 0 -959px;
 }
+
 .sys_right_fixed li .ico {
     width: 50px;
     height: 50px;
     background: url(../img/headIcon.png) no-repeat 0 0/100px auto;
 }
+
 /*文本图标*/
 .icon-text .ding {
-    background: linear-gradient(135deg,rgba(149,197,255,1) 0,rgba(92,163,255,1) 100%);
+    background: linear-gradient(135deg, rgba(149, 197, 255, 1) 0, rgba(92, 163, 255, 1) 100%);
 }
+
 .icon-text .re {
-    background: linear-gradient(135deg,rgba(255,188,188,1) 0,rgba(255,135,135,1) 100%);
+    background: linear-gradient(135deg, rgba(255, 188, 188, 1) 0, rgba(255, 135, 135, 1) 100%);
 }
-.icon-text  em {
+
+.icon-text em {
     display: inline-block;
     vertical-align: middle;
     width: 24px;
     height: 17px;
-    background: linear-gradient(135deg,rgba(255,221,149,1) 0,rgba(255,185,92,1) 100%);
+    background: linear-gradient(135deg, rgba(255, 221, 149, 1) 0, rgba(255, 185, 92, 1) 100%);
     border-radius: 9px;
     text-align: center;
     font-size: 12px;
@@ -728,4 +742,85 @@ a {
     overflow: hidden;
     margin-top: -2px;
     margin-right: 4px;
+}
+
+/*文章样式*/
+#contentEditor {
+    width: 100%;
+    min-height: 300px;
+    box-sizing: border-box;
+    padding: 10px;
+    color: #444;
+}
+
+#contentEditor p {
+    letter-spacing: 0.25px;
+    font: 16px/25px Tahoma, Verdana, 宋体;
+    margin: 20px 0px;
+}
+
+#contentEditor h4 {
+    font-weight: bold;
+    line-height: 1.333em;
+    margin: 10px 0 20px;
+    padding: 25px 0 0;
+}
+
+#contentEditor img {
+    width: 100%;
+    height: auto;
+    box-sizing: border-box;
+}
+
+.face-chat {
+    max-width: 1em !important;
+}
+
+.dempTip {
+    border-left: 2px solid #00BCD4;
+    padding-left: 5px;
+    margin: 10px;
+    font-size: 16px;
+}
+
+code {
+    white-space: pre-wrap;
+    background: #2D2D2D;
+    display: block;
+    margin: 10px;
+    border-radius: 5px;
+    color: #fff;
+}
+
+.viewTit {
+    color: #FF5722;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 30px;
+    line-height: 30px;
+    font-size: 14px;
+    text-align: center;
+    display: block;
+    width: 100%;
+    background: #FFEB3B;
+    box-shadow: 0 0 5px;
+}
+
+.Eleditor-controller {
+    z-index: 99;
+}
+
+.bbs-vip {
+    width: auto !important;
+    line-height: 22px;
+    padding: 0 5px;
+}
+
+.bbs-vip i {
+    width: 6px;
+    height: 6px;
+    display: inline-block;
+    background-position: 0 2px !important;
+    background: url(../img/icon_v.png) no-repeat center center/6px auto;
 }

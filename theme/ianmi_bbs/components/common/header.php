@@ -1,5 +1,5 @@
 <?php
-$version = source('/comm/core/IamVersion/getVersion').'01';
+$version = source('/comm/core/IamVersion/getVersion').'02';
 $setting = \comm\Setting::get(['theme', 'login_reward', 'weblogo', 'webname', 'webname_after', 'keywords', 'description']);
 $theme = $setting['theme'] ?? 'default';
 $title = $title ?? $setting['webname'] ?? '安米社区';
