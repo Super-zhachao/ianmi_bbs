@@ -1,0 +1,1 @@
+<div class="column_count">总数: <?=$list['page']['count']?></div>
