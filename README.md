@@ -7,7 +7,12 @@
 
 ------
 ##效果预览：
-![首页](./截图/index.jpg "首页截图")
+<p align="center">
+    <img src="./截图/index.jpg" alt="首页"  width="750">
+    <p align="center">
+        <em>首页截图</em>
+    </p>
+</p>
 ------
 ##使用说明:<br>
 **step0：**<br>
