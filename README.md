@@ -6,15 +6,19 @@
 【演示地址】[点击我查看演示，移动端下浏览效果最好；http://ianmi.313room.cn](http://ianmi.313room.cn)
 
 ------
+
 ##效果预览：
+
 <p align="center">
-    <img src="./截图/index.jpg" alt="首页"  width="750">
+    <img src="./截图/index.jpg" alt="首页"  style="width: 750px">
     <p align="center">
         <em>首页截图</em>
     </p>
 </p>
 ------
+
 ##使用说明:<br>
+
 **step0：**<br>
 安装安米程序，官方程序下载地址：[安米程序](http://bbs.ianmi.com)<br>
 **step1：**<br>
