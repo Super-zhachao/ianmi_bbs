@@ -130,29 +130,6 @@ $forum['context'] = Ubb::face($forum['context']);
     </div>
   </form>
   <script>
-
-    var contentEditor = new Eleditor({
-      el: '#contentEditor',
-      /*初始化完成钩子*/
-      mounted: function () {
-
-      },
-      changer: function () {
-
-      },
-      /*自定义按钮的例子*/
-      toolbars: [
-        'insertText',
-        'editText',
-        'insertLink',
-        'insertHr',
-        'delete',
-        'undo',
-        'cancel'
-      ],
-      placeHolder: ''
-    });
-
     var iamEditor = new IamEditor();
     iamEditor.getBox(document.querySelector('._edit_content'));
 

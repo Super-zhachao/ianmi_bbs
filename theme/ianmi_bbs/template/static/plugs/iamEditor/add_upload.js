@@ -4,6 +4,32 @@ $(function () {
     'file_data': []
   };
 
+  var contentEditor = new Eleditor({
+    el: '#contentEditor',
+    /*初始化完成钩子*/
+    mounted: function () {
+    },
+    changer: function () {
+    },
+    /*自定义按钮的例子*/
+    toolbars: [
+      {
+        id: 'upimg',
+        name: '插图片',
+        handle: function (_select, _controll) {//回调有两个参数，分别是已选择的编辑dom对象和当前控制按钮对象
+          upimg_self(_select, _controll)
+        }
+      },
+      'insertText',
+      'editText',
+      'insertLink',
+      'insertHr',
+      'delete',
+      'undo',
+      'cancel'
+    ]
+  });
+
   if ($('input[name=img_data]').val()) {
     upload_data.img_data = $('input[name=img_data]').val().split(',');
   }
@@ -288,32 +314,6 @@ $(function () {
   // this.remove();
 
 
-  //
-  var contentEditor = new Eleditor({
-    el: '#contentEditor',
-    /*初始化完成钩子*/
-    mounted: function () {
-    },
-    changer: function () {
-    },
-    /*自定义按钮的例子*/
-    toolbars: [
-      {
-        id: 'upimg',
-        name: '插图片',
-        handle: function (_select, _controll) {//回调有两个参数，分别是已选择的编辑dom对象和当前控制按钮对象
-          upimg_self(_select, _controll)
-        }
-      },
-      'insertText',
-      'editText',
-      'insertLink',
-      'insertHr',
-      'delete',
-      'undo',
-      'cancel'
-    ]
-  });
 
   //上传图片
   function upimg_self(_select, _controll) {
