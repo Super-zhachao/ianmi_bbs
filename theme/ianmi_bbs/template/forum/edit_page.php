@@ -1,4 +1,6 @@
-<?php useComp('/components/common/user_header', ['title' => $forum['title'] . '-帖子修改']); ?>
+<?php use comm\core\Ubb;
+
+useComp('/components/common/user_header', ['title' => $forum['title'] . '-帖子修改']); ?>
 <?php useComp('/components/common/header_nav', [
     'title' => '帖子修改',
     'rightBottom' => [
@@ -9,9 +11,11 @@
 $version = source('/comm/core/IamVersion/getVersion');
 $setting = \comm\Setting::get(['theme']);
 $theme = $setting['theme'] ?? 'default';
+//替换颜表情
+$forum['context'] = Ubb::face($forum['context']);
 ?>
   <script src="/theme/<?= $theme ?>/template/static/plugs/Eleditor/Eleditor.min.js?v=<?= $version ?>"></script>
-  <script src="/static/js/iamEditor.min.js?v=<?= $version ?>"></script>
+  <script src="/theme/<?= $theme ?>/template/static/plugs/iamEditor/iamEditor.min.js?v=<?= $version ?>"></script>
   <script>
     var ua = navigator.userAgent.toLowerCase();
 
@@ -55,8 +59,6 @@ $theme = $setting['theme'] ?? 'default';
       <div class="_menu">
         <div class="_add_title">添加标题</div>
         <div class="_add_face icon-svg" wd="表情"></div>
-        <div class="_add_hr icon-svg" wd="分割线"></div>
-        <div class="_add_image icon-svg" wd="图片"></div>
         <div class="_add_file icon-svg" wd="文件"></div>
         <!-- <div class="_ubb_info icon-svg" wd="UBB说明">UBB说明</div> -->
       </div>
@@ -159,9 +161,6 @@ $theme = $setting['theme'] ?? 'default';
       $('.chat-face-box').height($('.chat-face-box').height() == 0 ? $('.face-box').innerHeight() : 0);
     });
 
-    $('._add_hr').click(function () {
-      iamEditor.insertHTML('<hr data-code="[hr]"/>');
-    });
 
     $('._add_file').click(function () {
       $('.chat-face-box').height(0);
@@ -218,5 +217,5 @@ $theme = $setting['theme'] ?? 'default';
       {name: "做操", src: "zuocao.gif"}
     ]
   </script>
-  <script src="/static/js/forum/add_upload.js"></script>
+  <script src="/theme/<?= $theme ?>/template/static/plugs/iamEditor/add_upload.js"></script>
 <?php useComp('/components/common/footer'); ?>

@@ -3,7 +3,12 @@
     // 'keywords' => implode($forum['keywords'], ','),
     // 'description' => mb_substr($forum['strip_tags_context'], 0, 100)
 ]); ?>
-  <script src="/static/js/iamEditor.min.js?v=<?= $version ?>"></script>
+<?php
+$version = source('/comm/core/IamVersion/getVersion');
+$setting = \comm\Setting::get(['theme']);
+$theme = $setting['theme'] ?? 'default';
+?>
+  <script src="/theme/<?= $theme ?>/template/static/plugs/iamEditor/iamEditor.min.js?v=<?= $version ?>"></script>
   <style>
     body {
       background: #FFF;

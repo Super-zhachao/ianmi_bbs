@@ -11,7 +11,7 @@ $setting = \comm\Setting::get(['theme']);
 $theme = $setting['theme'] ?? 'default';
 ?>
   <script src="/theme/<?= $theme ?>/template/static/plugs/Eleditor/Eleditor.min.js?v=<?= $version ?>"></script>
-  <script src="/static/js/iamEditor.min.js?v=<?= $version ?>"></script>
+  <script src="/theme/<?= $theme ?>/template/static/plugs/iamEditor/iamEditor.min.js?v=<?= $version ?>"></script>
   <script>
     var ua = navigator.userAgent.toLowerCase();
 
@@ -57,8 +57,6 @@ $theme = $setting['theme'] ?? 'default';
       <div class="_menu">
         <div class="_add_title">添加标题</div>
         <div class="_add_face icon-svg" wd="表情"></div>
-        <div class="_add_hr icon-svg" wd="分割线"></div>
-        <div class="_add_image icon-svg" wd="图片"></div>
         <div class="_add_file icon-svg" wd="文件"></div>
         <!-- <div class="_ubb_info icon-svg" wd="UBB说明">UBB说明</div> -->
       </div>
@@ -111,33 +109,6 @@ $theme = $setting['theme'] ?? 'default';
     </div>
   </form>
   <script>
-    var contentEditor = new Eleditor({
-      el: '#contentEditor',
-      /*初始化完成钩子*/
-      mounted: function () {
-
-      },
-      changer: function () {
-        listenContent()
-      },
-      /*自定义按钮的例子*/
-      toolbars: [
-        'insertText',
-        'editText',
-        'insertLink',
-        'insertHr',
-        'delete',
-        'undo',
-        'cancel'
-      ]
-    });
-
-    //监听内容 防止空节点 无法输入
-    function listenContent() {
-      if (contentEditor.getEditNode().length < 1) {
-        $('#contentEditor').html('<p class="Eleditor-placeholder">点击此处编辑内容</p>');
-      }
-    }
 
     //原编辑器
     var iamEditor = new IamEditor();
@@ -146,10 +117,6 @@ $theme = $setting['theme'] ?? 'default';
     $('._add_face').click(function () {
       $('._file_box').height(0);
       $('.chat-face-box').height($('.chat-face-box').height() == 0 ? $('.face-box').innerHeight() : 0);
-    });
-
-    $('._add_hr').click(function () {
-      iamEditor.insertHTML('<hr data-code="[hr]"/>');
     });
 
     $('._add_file').click(function () {
@@ -207,5 +174,5 @@ $theme = $setting['theme'] ?? 'default';
       {name: "做操", src: "zuocao.gif"}
     ]
   </script>
-  <script src="/static/js/forum/add_upload.js"></script>
+  <script src="/theme/<?= $theme ?>/template/static/plugs/iamEditor/add_upload.js"></script>
 <?php useComp('/components/common/footer'); ?>

@@ -773,7 +773,8 @@ a {
 }
 
 .face-chat {
-    max-width: 1em !important;
+    max-width: 1.5rem !important;
+    height: auto !important;
 }
 
 .dempTip {
